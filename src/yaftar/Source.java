@@ -9,10 +9,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "source")
+@Table(name = "system_source")
 public class Source {
 	@Id
 	@GeneratedValue
+	@Column(name="id")
+	private int id;
+	
 	@Column(name = "date")
 	private String date;
 
@@ -39,6 +42,14 @@ public class Source {
 		this.cpu = cpu;
 		this.IO = IO;
 
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getDate() {
