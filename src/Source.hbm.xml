@@ -1,0 +1,26 @@
+<!-- <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="yaftar.Source" table="system_source">
+      <meta attribute="class-description">
+         This class contains the source detail. 
+      </meta>
+      <id name="id" type="int" column="id">
+         <generator class="assigned"/>
+      </id>
+     
+      <property name="date" column="date" type="String"/>
+      <property name="time" column="time" type="String"/>
+      <property name="disk" column="disk" type="String"/>
+      <property name="memory" column="memory" type="String"/>
+      <property name="cpu" column="cpu" type="String"/>
+      <property name="IO" column="IO" type="String"/>
+                  
+            
+      
+   </class>
+</hibernate-mapping>
+-->
