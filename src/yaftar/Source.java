@@ -8,14 +8,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/** 
+ Source class is class for create object for databases
+  @author SHirdel
+ */
+
 @Entity
 @Table(name = "system_source")
 public class Source {
 	@Id
 	@GeneratedValue
-	@Column(name="id")
+	@Column(name = "id")
 	private int id;
-	
+
 	@Column(name = "date")
 	private String date;
 
@@ -33,7 +38,10 @@ public class Source {
 
 	@Column(name = "IO")
 	private String IO;
-
+	/**
+	 Source class have two contractor 
+	 */
+Source(){}
 	Source(String date, String time, String disk, String memory, String cpu, String IO) {
 		this.date = date;
 		this.time = time;

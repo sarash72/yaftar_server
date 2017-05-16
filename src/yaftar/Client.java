@@ -38,18 +38,22 @@ public class Client {
 			 * send date to server
 			 */
 			DataOutputStream os = new DataOutputStream(client.getOutputStream());
-			//os.writeBytes(date + " " + time);
+			os.writeBytes(date + " " + time+ "\n");
 			/**
 			 * get and print system information
 			 */
 			DataInputStream is = new DataInputStream(client.getInputStream());
-			//String input = is.readLine();
-			//System.out.println(input);
-			 fh = new FileHandler("D:/log/MyLogFile.log");  
+			String input = is.readLine();
+			System.out.println(input);
+			/**
+			 * create log file
+			 */
+			 fh = new FileHandler("D:/log/MyLogFile.log",true);  
 		        logger.addHandler(fh);
 		        SimpleFormatter formatter = new SimpleFormatter();  
 		        fh.setFormatter(formatter); 
-
+		        logger.info(date + " " + time+" "+input);  
+		        
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {

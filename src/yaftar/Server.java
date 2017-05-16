@@ -38,7 +38,6 @@ import java.lang.management.ManagementFactory;
  */
 class MyThread extends Thread {
 	SessionFactory factory;
-	String date;
 	Socket client;
 
 	/**
@@ -64,13 +63,12 @@ class MyThread extends Thread {
 			 * get client request
 			 */
 			String client_request = is.readLine();
-			System.out.println(client_request);
 			String[] split_client_thread = client_request.split(" ");
 			/**
 			 * send client date and time to search function
 			 */
 			search_Source(split_client_thread[0], split_client_thread[1]);
-			os.writeBytes(client_request);
+			os.writeBytes(search_Source(split_client_thread[0], split_client_thread[1])+"\n");
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -108,8 +106,8 @@ class MyThread extends Thread {
 				String source_time_string = choose_source.getTime();
 				if (source_date_string.equals(date) && source_time_string.equals(time)) {
 					flag = 1;
-					result_search = "Disk Usage: " + choose_source.getDisk() + "  " + "Memory Usage: "
-							+ choose_source.getMemory() + "  " + "Cpu Usage: " + choose_source.getCpu() + "  "
+					result_search = "Disk Usage: " + choose_source.getDisk() +"\n"+ "  " + "Memory Usage: "
+							+ choose_source.getMemory() +"\n"+ "  " + "Cpu Usage: " + choose_source.getCpu() +"\n"+ "  "
 							+ "IO Usage: " + choose_source.getIO();
 					break;
 				}
